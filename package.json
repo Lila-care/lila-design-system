@@ -1,0 +1,33 @@
+{
+  "name": "lila-design-system",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Sketchbook de design system de Lila — cataloga en vivo los tokens y componentes reales de lila-web, sin duplicarlos.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "type-check": "tsc -b --noEmit",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.554.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.4.0",
+    "wouter": "^3.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "tailwindcss": "^4.1.17",
+    "tw-animate-css": "^1.4.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  }
+}

@@ -1,0 +1,14 @@
+/* Fuente única de verdad: los tokens de marca (@theme) y el reset viven en
+   lila-web/src/index.css. Los importamos por path relativo en vez de copiarlos
+   para que este catálogo nunca se desincronice del código real. */
+@import "../../lila-web/src/index.css";
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: block;
+  place-items: initial;
+}
