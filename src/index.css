@@ -3,6 +3,11 @@
    para que este catálogo nunca se desincronice del código real. */
 @import "../../lila-web/src/index.css";
 
+/* Sin esto, Tailwind v4 solo escanea archivos dentro de esta carpeta — cualquier clase usada
+   ÚNICAMENTE en un componente importado de lila-web (ej. "w-7 h-7" en el avatar de chat) nunca
+   se generaría, aunque el componente se importe y renderice bien. */
+@source "../../lila-web/src";
+
 #root {
   height: 100%;
   width: 100%;
