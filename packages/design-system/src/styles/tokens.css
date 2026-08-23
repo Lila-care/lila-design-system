@@ -48,9 +48,9 @@
   --surface-warm:         #fbf9f0;
 
   --nav-background:   #4a1f3a;
-  /* Placeholder sin resolver en Figma (literal "black") — confirmar valor real con Diseño
-     antes de mergear a main (KAN-30 AC). */
-  --nav-icon-default: #000000;
+  /* teal/500 — confirmado por Diseño, reemplaza el placeholder "black" sin resolver
+     (KAN-30 AC). Aplica al ícono default sobre fondo negro en las 3 sidebars del canvas. */
+  --nav-icon-default: #13c4a3;
 
   --text-primary:   #2a1f30;
   --text-secondary: #5a4e63;
