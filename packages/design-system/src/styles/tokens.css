@@ -9,20 +9,78 @@
  * design system.
  */
 
+:root {
+  --background: #FFFFFF;
+  --border: #957BA3;
+  --ring: #7e3565;
+  --card: #FFFFFF;
+  --card-foreground: #4A4453;
+  --muted-foreground: #6D5F7A;
+  /* Brand tokens — user-facing screens (distinct from admin --primary: #7e3565) */
+  --brand-purple: #9B72C8;
+  --brand-dark:   #3D2B50;
+  --brand-bg:     #FAF6F0;
+  /* Neomorphism tokens */
+  --neo-bg:           #f0eef5;
+  --neo-bg-mint:      #eef5f2;
+  --neo-bg-rose:      #f5eef2;
+  --neo-bg-cream:     #f5f2ee;
+  --neo-shadow-raised: 6px 6px 14px rgba(174,174,192,0.4), -6px -6px 14px rgba(255,255,255,0.8);
+  --neo-shadow-raised-sm: 3px 3px 8px rgba(174,174,192,0.35), -3px -3px 8px rgba(255,255,255,0.8);
+  --neo-shadow-inset:  inset 4px 4px 10px rgba(174,174,192,0.35), inset -4px -4px 10px rgba(255,255,255,0.8);
+  --neo-radius:        16px;
+  --neo-radius-sm:     12px;
+
+  /*
+   * Namespaced tokens (KAN-30) — extraídos vía Figma MCP get_design_context sobre el canvas
+   * "Chat — Web" (empty-state-invitada 27:137, chat-activo-registrada 27:9,
+   * empty-state-registrada 27:79). Nombre de variable en Figma → custom property, "/" → "-".
+   */
+  --brand-primary:       #7e3565;
+  --brand-primary-dark:  #4a1f3a;
+  --brand-accent:        #8b5cf6;
+
+  --surface-default:      #ffffff;
+  --surface-brand-light:  #f8eafe;
+  --surface-brand-medium: #e7d5f5;
+  --surface-muted:        #f3edf8;
+  --surface-subtle:       #faf8ff;
+  --surface-warm:         #fbf9f0;
+
+  --nav-background:   #4a1f3a;
+  /* Placeholder sin resolver en Figma (literal "black") — confirmar valor real con Diseño
+     antes de mergear a main (KAN-30 AC). */
+  --nav-icon-default: #000000;
+
+  --text-primary:   #2a1f30;
+  --text-secondary: #5a4e63;
+  --text-muted:     #7e6b8a;
+  --text-on-brand:  #ffffff;
+  --text-disabled:  #9ca3af;
+
+  --border-default: #d4bee0;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
-  --color-foreground: #828282;
+  --color-foreground: #4A4453;
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-muted-foreground: var(--muted-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: #7e3565;
+  --color-primary-foreground: #FFFFFF;
   --color-secondary: #F8EAFE;
-  --color-accent: #d8d9b1;
+  --color-secondary-foreground: #7e3565;
+  --color-accent: #FEF3C7;
+  --color-accent-foreground: #78350F;
+  --color-destructive: #B91C1C;
+  --color-destructive-foreground: #FFFFFF;
   --color-text: #828282;
   --color-muted: #F0EEE8;
   --color-muted-foreground: #8A8194;
@@ -42,6 +100,31 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  /* Sombra tintada de marca para Card stat */
+  --shadow-stat: 0 4px 24px rgba(126, 53, 101, 0.12);
+  /* Brand tokens — user-facing screens */
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-dark:   var(--brand-dark);
+  --color-brand-bg:     var(--brand-bg);
+  --shadow-brand-glow:  0 8px 32px rgba(155, 114, 200, 0.15);
+  /* Namespaced tokens (KAN-30) */
+  --color-brand-primary:        var(--brand-primary);
+  --color-brand-primary-dark:   var(--brand-primary-dark);
+  --color-brand-accent:         var(--brand-accent);
+  --color-surface-default:      var(--surface-default);
+  --color-surface-brand-light:  var(--surface-brand-light);
+  --color-surface-brand-medium: var(--surface-brand-medium);
+  --color-surface-muted:        var(--surface-muted);
+  --color-surface-subtle:       var(--surface-subtle);
+  --color-surface-warm:         var(--surface-warm);
+  --color-nav-background:       var(--nav-background);
+  --color-nav-icon-default:     var(--nav-icon-default);
+  --color-text-primary:         var(--text-primary);
+  --color-text-secondary:       var(--text-secondary);
+  --color-text-muted:           var(--text-muted);
+  --color-text-on-brand:        var(--text-on-brand);
+  --color-text-disabled:        var(--text-disabled);
+  --color-border-default:       var(--border-default);
 }
 
 .dark {

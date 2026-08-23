@@ -6,6 +6,10 @@ import path from "path";
 // "@" apunta al src real de lila-web (no al de esta app) para que los componentes
 // y utils que importamos aquí (Sidebar, EmptyState, cn, etc.) se resuelvan contra la
 // fuente original — así el catálogo nunca duplica ni se desincroniza del código real.
+// "@lila-care/design-system" NO se alias acá — se resuelve como paquete normal desde
+// node_modules (dependencia "file:./packages/design-system" en package.json), igual que
+// en lila-web. Un alias a path.resolve(...) rompe subpath imports como
+// "@lila-care/design-system/tokens.css" (Vite hace prefix-replace, no node resolution).
 // "@sketch" apunta al src propio de este sketchbook.
 export default defineConfig({
   plugins: [react(), tailwindcss()],
