@@ -1,4 +1,6 @@
-// Import en vivo desde lila-web (alias "@" -> lila-web/src en vite.config.ts). No es una copia.
+// Import en vivo desde el propio paquete publicado (alias "@lila-care/design-system" ->
+// packages/design-system/src en vite.config.ts). Mismo specifier que usa lila-web hoy —
+// ya no vive en lila-web/src/components/ui/, se migró a este paquete (PR #29).
 import {
   Table,
   TableHeader,
@@ -8,7 +10,7 @@ import {
   TableHead,
   TableCell,
   TableCaption,
-} from "@/components/ui/table";
+} from "@lila-care/design-system";
 import { ComponentPage, Section, Example, PropsTable } from "../../doc";
 
 const ROWS = [
@@ -18,7 +20,7 @@ const ROWS = [
 ];
 
 const BASIC_CODE = `
-import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@lila-care/design-system";
 
 function Example({ rows }) {
   return (
@@ -97,8 +99,8 @@ export default function TablePage() {
   return (
     <ComponentPage
       title="Table"
-      tagline="El único primitivo shadcn/ui real que existe hoy en lila-web — todo lo demás en la app se construye a mano."
-      source="components/ui/table.tsx"
+      tagline="El único primitivo shadcn/ui real que existe hoy — todo lo demás en lila-web se construye a mano. Vive en @lila-care/design-system, no en la app."
+      source="packages/design-system/src/components/table.tsx"
     >
       <Example title="Ejemplo básico" code={BASIC_CODE}>
         <Table>
