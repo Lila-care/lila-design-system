@@ -6,4 +6,4 @@ Add namespaced KAN-30 surface/text/brand tokens (`--surface-*`, `--text-*`, `--b
 
 Also adds new `Banner`, `Breadcrumbs`, and `DataTable` components, and extends `Card` with `cardVariants`, `CardIcon`, and `CardMetadata`.
 
-Note: `--nav-icon-default` is currently a placeholder (`#000000`) — the literal value wasn't resolved in the Figma source and needs confirmation from Design before this is treated as final.
+`--nav-icon-default` ships as `#13c4a3` (teal/500) — Design resolved the previous unresolved "black" placeholder directly in Figma and merged that branch to main.
