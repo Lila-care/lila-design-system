@@ -1,6 +1,6 @@
 {
   "name": "@lila-care/design-system",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Primitivos UI y design tokens de Lila (fuente: lila-web), publicados como paquete versionado.",
   "type": "module",
   "license": "UNLICENSED",
