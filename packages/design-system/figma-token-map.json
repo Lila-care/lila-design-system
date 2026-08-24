@@ -1,0 +1,19 @@
+{
+  "brand/primary": "--brand-primary",
+  "brand/primary-dark": "--brand-primary-dark",
+  "brand/accent": "--brand-accent",
+  "surface/default": "--surface-default",
+  "surface/brand-light": "--surface-brand-light",
+  "surface/brand-medium": "--surface-brand-medium",
+  "surface/muted": "--surface-muted",
+  "surface/subtle": "--surface-subtle",
+  "surface/warm": "--surface-warm",
+  "nav/background": "--nav-background",
+  "nav/icon-default": "--nav-icon-default",
+  "text/primary": "--text-primary",
+  "text/secondary": "--text-secondary",
+  "text/muted": "--text-muted",
+  "text/on-brand": "--text-on-brand",
+  "text/disabled": "--text-disabled",
+  "border/default": "--border-default"
+}

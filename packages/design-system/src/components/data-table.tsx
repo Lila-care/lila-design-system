@@ -1,4 +1,5 @@
 import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
 import { cn } from "../lib/utils";
@@ -10,7 +11,48 @@ export interface DataTableColumn<T> {
   sortable?: boolean;
 }
 
-export interface DataTableProps<T> {
+// variant="default" preserva 1:1 el look/comportamiento previo a KAN-46 (regresión cero, sin
+// otros consumidores conocidos de este componente — ver reporte FE). variant="admin" es la
+// única adición: header con fondo de marca y wrapper sin sombra/radio neomórficos.
+const dataTableWrapperVariants = cva("overflow-hidden", {
+  variants: {
+    variant: {
+      default: "rounded-[--neo-radius]",
+      admin: "",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+const dataTableHeadVariants = cva("", {
+  variants: {
+    variant: {
+      default: "",
+      admin: "bg-primary text-primary-foreground",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+const dataTableHeaderCellVariants = cva("px-4 py-3 text-left font-semibold", {
+  variants: {
+    variant: {
+      default: "text-card-foreground",
+      admin: "text-primary-foreground",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+export interface DataTableProps<T> extends VariantProps<
+  typeof dataTableWrapperVariants
+> {
   columns: DataTableColumn<T>[];
   rows: T[];
   keyExtractor: (row: T) => string;
@@ -23,6 +65,7 @@ export function DataTable<T extends object>({
   rows,
   keyExtractor,
   emptyState,
+  variant = "default",
   className,
 }: DataTableProps<T>) {
   const [sortKey, setSortKey] = React.useState<keyof T | null>(null);
@@ -50,17 +93,28 @@ export function DataTable<T extends object>({
 
   return (
     <div
-      className={cn("overflow-hidden rounded-[--neo-radius]", className)}
-      style={{ boxShadow: "var(--neo-shadow-raised)" }}
+      className={cn(dataTableWrapperVariants({ variant }), className)}
+      style={
+        variant === "admin"
+          ? undefined
+          : { boxShadow: "var(--neo-shadow-raised)" }
+      }
     >
       <table className="w-full border-collapse text-sm">
-        <thead style={{ background: "rgba(174,174,192,0.08)" }}>
+        <thead
+          className={dataTableHeadVariants({ variant })}
+          style={
+            variant === "admin"
+              ? undefined
+              : { background: "rgba(174,174,192,0.08)" }
+          }
+        >
           <tr>
             {columns.map((col) => (
               <th
                 key={String(col.key)}
                 className={cn(
-                  "px-4 py-3 text-left font-semibold text-card-foreground",
+                  dataTableHeaderCellVariants({ variant }),
                   col.sortable && "cursor-pointer select-none",
                 )}
                 onClick={col.sortable ? () => handleSort(col.key) : undefined}
