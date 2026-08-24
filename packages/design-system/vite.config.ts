@@ -23,6 +23,7 @@ export default defineConfig({
         "clsx",
         "lucide-react",
         "radix-ui",
+        "recharts",
         "tailwind-merge",
       ],
     },

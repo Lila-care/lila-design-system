@@ -12,6 +12,8 @@ import BreadcrumbsPage from "./pages/components/Breadcrumbs";
 import ButtonPage from "./pages/components/Button";
 import CardPage from "./pages/components/Card";
 import DataTablePage from "./pages/components/DataTable";
+import KPICardPage from "./pages/components/KPICard";
+import CategoryBreakdownPage from "./pages/components/CategoryBreakdown";
 import SelectPage from "./pages/components/Select";
 import SkeletonPage from "./pages/components/Skeleton";
 import TablePage from "./pages/components/Table";
@@ -131,6 +133,18 @@ export const REGISTRY: NavEntry[] = [
     label: "DataTable",
     group: "Componentes",
     Component: DataTablePage,
+  },
+  {
+    path: "/componentes/kpi-card",
+    label: "KPICard",
+    group: "Componentes",
+    Component: KPICardPage,
+  },
+  {
+    path: "/componentes/category-breakdown",
+    label: "CategoryBreakdown",
+    group: "Componentes",
+    Component: CategoryBreakdownPage,
   },
   {
     path: "/componentes/table",
