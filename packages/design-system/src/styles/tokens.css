@@ -59,6 +59,21 @@
   --text-disabled:  #9ca3af;
 
   --border-default: #d4bee0;
+
+  /*
+   * Chart series tokens (KAN-45, CategoryBreakdown) — no existían en :root (solo en .dark,
+   * como paleta oklch genérica sin relación con la marca). lila-web/src/Admin/*.tsx (
+   * TrendSection.tsx, EngagementSection.tsx, NewUsersHeroCard.tsx) referencia var(--plum-700),
+   * var(--coral-600), var(--orchid-600), var(--forest-700) para colorear gráficos, pero esas
+   * custom properties no están definidas en ningún .css de lila-web (grep sin resultados) —
+   * no hay un valor 1:1 que copiar. Los 4 valores de abajo son nuevos, elegidos para quedar
+   * consistentes con la paleta de marca ya presente acá (--brand-primary #7e3565,
+   * --brand-accent #8b5cf6, --nav-icon-default #13c4a3) y visualmente distinguibles entre sí.
+   */
+  --chart-1: #7e3565; /* plum — igual a --brand-primary */
+  --chart-2: #e2725b; /* coral cálido */
+  --chart-3: #b563a8; /* orchid, entre plum y coral */
+  --chart-4: #2f6b4f; /* forest, verde para contraste */
 }
 
 @theme inline {

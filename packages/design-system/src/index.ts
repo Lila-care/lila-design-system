@@ -21,6 +21,13 @@ export {
 } from "./components/card";
 export { DataTable } from "./components/data-table";
 export type { DataTableProps, DataTableColumn } from "./components/data-table";
+export { KPICard } from "./components/kpi-card";
+export type { KPICardProps } from "./components/kpi-card";
+export { CategoryBreakdown } from "./components/category-breakdown";
+export type {
+  CategoryBreakdownProps,
+  CategoryBreakdownCategory,
+} from "./components/category-breakdown";
 export {
   Select,
   SelectContent,

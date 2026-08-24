@@ -84,6 +84,21 @@ const EMPTY_CODE = `
 />
 `;
 
+const ADMIN_CODE = `
+// variant="admin" — header con fondo de marca (bg-primary/text-primary-foreground), sin la
+// sombra ni el radio neomórficos del wrapper (esos siguen aplicando solo en variant="default").
+<DataTable
+  variant="admin"
+  columns={[
+    { key: "name",   header: "Nombre",  sortable: true },
+    { key: "email",  header: "Email" },
+    { key: "cycles", header: "Ciclos",  sortable: true },
+  ]}
+  rows={users}
+  keyExtractor={(row) => row.id}
+/>
+`;
+
 export default function DataTablePage() {
   return (
     <ComponentPage
@@ -141,10 +156,36 @@ export default function DataTablePage() {
         </div>
       </Example>
 
+      <Example
+        title='variant="admin" (KAN-46)'
+        description="Variante para el dashboard de Admin: header bg-primary/text-primary-foreground y wrapper sin sombra/radio neomórficos. variant='default' (el usado arriba) preserva 1:1 el look previo — regresión cero."
+        code={ADMIN_CODE}
+      >
+        <div className="w-full overflow-x-auto">
+          <DataTable<MockUser>
+            variant="admin"
+            columns={[
+              { key: "name", header: "Nombre", sortable: true },
+              { key: "email", header: "Email" },
+              { key: "cycles", header: "Ciclos", sortable: true },
+            ]}
+            rows={MOCK_USERS}
+            keyExtractor={(row) => row.id}
+          />
+        </div>
+      </Example>
+
       <Section title="Component API">
         <PropsTable
           heading="DataTable<T>"
           rows={[
+            {
+              name: "variant",
+              type: '"default" | "admin"',
+              default: '"default"',
+              description:
+                "default: sin cambios respecto al look original (wrapper con sombra/radio neomórficos, header sutil). admin: header bg-primary/text-primary-foreground, wrapper sin sombra ni radio.",
+            },
             {
               name: "columns",
               type: "DataTableColumn<T>[]",
