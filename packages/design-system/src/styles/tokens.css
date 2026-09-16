@@ -48,9 +48,25 @@
   --surface-warm:         #fbf9f0;
 
   --nav-background:   #4a1f3a;
-  /* teal/500 — confirmado por Diseño, reemplaza el placeholder "black" sin resolver
-     (KAN-30 AC). Aplica al ícono default sobre fondo negro en las 3 sidebars del canvas. */
-  --nav-icon-default: #13c4a3;
+  /*
+   * Pastilla del nav item inactivo en el rail. Reemplaza el teal/500 (#13c4a3) que figuraba
+   * como confirmado por Diseño en KAN-30 — decisión revisada por producto.
+   *
+   * Es el mismo valor que --color-accent (amber-100), reutilizado en vez de introducir un
+   * color nuevo. Se evaluaron alternativas más oscuras y versiones translúcidas; todas fallan
+   * por la misma razón: al bajar la opacidad la pastilla se mezcla con --nav-background, que
+   * es ciruela, y termina pareciéndose al item activo (--brand-primary). Medido: el mismo
+   * amarillo al 55% cae a 2.85:1 contra el activo, y el verde folicular al 55% a 1.88:1.
+   * Para suavizar hay que aclarar, no transparentar.
+   *
+   * Contraste medido contra --nav-background (#4a1f3a):
+   *   pastilla vs rail ....................... 12.18:1  (WCAG UI >= 3.0)
+   *   activo (--brand-primary) vs inactivo ...  7.30:1
+   *   hover vs rail .......................... 10.89:1
+   */
+  --nav-icon-default: #FEF3C7;
+  --nav-icon-hover:   #FDE68A; /* amber-200, el siguiente paso de la misma escala */
+  --nav-icon-fg:      #4a1f3a; /* ícono/iniciales sobre la pastilla — 12.18:1 */
 
   --text-primary:   #2a1f30;
   --text-secondary: #5a4e63;
@@ -68,7 +84,7 @@
    * custom properties no están definidas en ningún .css de lila-web (grep sin resultados) —
    * no hay un valor 1:1 que copiar. Los 4 valores de abajo son nuevos, elegidos para quedar
    * consistentes con la paleta de marca ya presente acá (--brand-primary #7e3565,
-   * --brand-accent #8b5cf6, --nav-icon-default #13c4a3) y visualmente distinguibles entre sí.
+   * --brand-accent #8b5cf6, --nav-icon-default #FEF3C7) y visualmente distinguibles entre sí.
    */
   --chart-1: #7e3565; /* plum — igual a --brand-primary */
   --chart-2: #e2725b; /* coral cálido */
@@ -134,6 +150,8 @@
   --color-surface-warm:         var(--surface-warm);
   --color-nav-background:       var(--nav-background);
   --color-nav-icon-default:     var(--nav-icon-default);
+  --color-nav-icon-hover:       var(--nav-icon-hover);
+  --color-nav-icon-fg:          var(--nav-icon-fg);
   --color-text-primary:         var(--text-primary);
   --color-text-secondary:       var(--text-secondary);
   --color-text-muted:           var(--text-muted);
