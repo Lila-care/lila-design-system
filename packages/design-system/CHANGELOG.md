@@ -1,5 +1,11 @@
 # @lila-care/design-system
 
+## 0.4.1
+
+### Patch Changes
+
+- 2fcf2cd: Define the base `--radius` (12px) so `rounded-sm/md/lg/xl` stop rendering square. Resulting scale: sm 8px, md 10px, lg 12px, xl 16px.
+
 ## 0.4.0
 
 ### Minor Changes
