@@ -31,6 +31,11 @@
   --neo-radius:        16px;
   --neo-radius-sm:     12px;
 
+  /* Base radius for the shadcn-style scale in @theme (--radius-sm/md/lg/xl are calc()s over
+   * it). It was never defined, so every rounded-sm/md/lg/xl rendered square. 12px lines the
+   * scale up with Figma's radius tokens: sm = 8px, lg = 12px (md = 10px, xl = 16px). */
+  --radius: 12px;
+
   /*
    * Namespaced tokens (KAN-30) — extraídos vía Figma MCP get_design_context sobre el canvas
    * "Chat — Web" (empty-state-invitada 27:137, chat-activo-registrada 27:9,
